@@ -20,7 +20,7 @@ services:
       UPLOAD_LIMIT: 300M
       TZ: Asia/Bangkok
   ehr:
-    build: ./e-hr-project
+    build: ./frontend/e-hr-project
     ports:
       - 80:80
     environment:
