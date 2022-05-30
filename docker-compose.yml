@@ -31,6 +31,7 @@ services:
       - 8080:8080
     environment:
       TZ: Asia/Bangkok
+      JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF8
   crontab:
     build: ./Crontab
     environment:
