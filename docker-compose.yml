@@ -20,19 +20,19 @@ services:
       UPLOAD_LIMIT: 300M
       TZ: Asia/Bangkok
   ehr:
-    build: ./frontend/e-hr-project
+    image: chanasit12/ehr
     ports:
       - 80:80
     environment:
       TZ: Asia/Bangkok
   ehrservice:
-    build: ./eHRService
+    image: chanasit12/ehrservice
     ports:
       - 8080:8080
     environment:
       TZ: Asia/Bangkok
       JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF8
   crontab:
-    build: ./Crontab
+    image: chanasit12/crontab
     environment:
       TZ: Asia/Bangkok
