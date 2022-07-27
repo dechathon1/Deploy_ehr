@@ -7,32 +7,30 @@ services:
     volumes:
       - "./data:/var/lib/mysql"
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: oydc9t
       MYSQL_DATABASE: e-hr
       TZ: Asia/Bangkok
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin:5.1
     ports:
       - 8000:80
     environment:
-      PMA_USER: root
       PMA_HOSTS: mysql
       UPLOAD_LIMIT: 300M
       TZ: Asia/Bangkok
+    links:
+      - mysql
   ehr:
-    image: chanasit12/ehr
+    image: chanasit12/ehr2
     ports:
       - 80:80
     environment:
       TZ: Asia/Bangkok
   ehrservice:
-    image: chanasit12/ehrservice
+    image: chanasit12/ehrservice2
     ports:
       - 8080:8080
     environment:
       TZ: Asia/Bangkok
       JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF8
-  crontab:
-    image: chanasit12/crontab
-    environment:
-      TZ: Asia/Bangkok
+

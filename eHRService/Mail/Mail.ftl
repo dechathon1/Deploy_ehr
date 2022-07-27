@@ -13,6 +13,6 @@
 <br/>
 <div><b>Password:${password}</b></div>
 <br/>
-<div>Please login again at ehr.techberry.co.th</div>
+<div href="http://103.2.114.70">Please login again at ehr.techberry.co.th</div>
 </body>
 </html>
